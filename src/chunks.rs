@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use crate::state::AppState;
 
 pub const GRID_WIDTH: usize = 4;
 pub const GRID_DEPTH: usize = 4;
@@ -10,7 +11,7 @@ pub struct ChunksPlugin;
 impl Plugin for ChunksPlugin {
     fn build(&self, app: &mut App) {
         app
-            .add_systems(Startup, spawn_scene);
+            .add_systems(OnEnter(AppState::Game), spawn_scene);
     }
 }
 

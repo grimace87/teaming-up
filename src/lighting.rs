@@ -1,12 +1,13 @@
 
 use bevy::prelude::*;
+use crate::state::AppState;
 
 pub struct LightingPlugin;
 
 impl Plugin for LightingPlugin {
     fn build(&self, app: &mut App) {
         app
-            .add_systems(Startup, spawn_lights);
+            .add_systems(OnEnter(AppState::Game), spawn_lights);
     }
 }
 

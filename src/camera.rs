@@ -1,11 +1,12 @@
 use bevy::prelude::*;
+use crate::state::AppState;
 
 pub struct GameCameraPlugin;
 
 impl Plugin for GameCameraPlugin {
     fn build(&self, app: &mut App) {
         app
-            .add_systems(Startup, spawn_camera);
+            .add_systems(OnEnter(AppState::Game), spawn_camera);
     }
 }
 
