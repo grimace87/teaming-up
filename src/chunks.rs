@@ -30,7 +30,6 @@ fn spawn_scene(
             let x = grid_start_x + (i as f32 + 0.5) * CHUNK_SIZE;
             let y = SURFACE_Y - 0.5 * CHUNK_SIZE;
             let z = grid_start_z + (j as f32 + 0.5) * CHUNK_SIZE;
-            let transform = Transform::from_xyz(x, y, z);
             commands.spawn((
                 Mesh3d(mesh_handle.clone()),
                 MeshMaterial3d(material_handle.clone()),
