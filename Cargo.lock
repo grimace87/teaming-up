@@ -303,6 +303,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "bevy-midi-graph"
+version = "0.1.0"
+source = "git+https://github.com/grimace87/bevy-midi-graph.git?rev=a52fcdcdb61fb8a64b0a7cf709f3bcfc29805d46#a52fcdcdb61fb8a64b0a7cf709f3bcfc29805d46"
+dependencies = [
+ "bevy",
+ "midi-graph",
+ "ron 0.8.1",
+ "serde",
+]
+
+[[package]]
 name = "bevy_a11y"
 version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -340,7 +351,7 @@ dependencies = [
  "downcast-rs",
  "either",
  "petgraph",
- "ron",
+ "ron 0.8.1",
  "serde",
  "smallvec",
  "thiserror 2.0.12",
@@ -401,7 +412,7 @@ dependencies = [
  "futures-lite",
  "js-sys",
  "parking_lot",
- "ron",
+ "ron 0.8.1",
  "serde",
  "stackfuture",
  "thiserror 2.0.12",
@@ -1723,6 +1734,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "crossbeam-deque"
+version = "0.8.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9dd111b7b7f7d55b72c0a6ae361660ee5853c9af73f70c3c2ef6858b950e2e51"
+dependencies = [
+ "crossbeam-epoch",
+ "crossbeam-utils",
+]
+
+[[package]]
+name = "crossbeam-epoch"
+version = "0.9.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5b82ac4a3c2ca9c3460964f020e1402edd5753411d7737aa39c3714ad1b5420e"
+dependencies = [
+ "crossbeam-utils",
+]
+
+[[package]]
 name = "crossbeam-queue"
 version = "0.3.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2357,6 +2387,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dfa686283ad6dd069f105e5ab091b04c62850d3e4cf5d67debad1933f55023df"
 
 [[package]]
+name = "hound"
+version = "3.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62adaabb884c94955b19907d60019f4e145d091c75345379e70d1ee696f7854f"
+
+[[package]]
 name = "image"
 version = "0.25.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2665,6 +2701,32 @@ dependencies = [
  "log",
  "objc",
  "paste",
+]
+
+[[package]]
+name = "midi-graph"
+version = "0.1.0"
+source = "git+https://github.com/grimace87/midi-graph.git?rev=7084419f195c9b7d24b9358c65396c51f454590d#7084419f195c9b7d24b9358c65396c51f454590d"
+dependencies = [
+ "byteorder",
+ "cpal",
+ "crossbeam-channel",
+ "hound",
+ "midly",
+ "ron 0.10.1",
+ "serde",
+ "serde_derive",
+ "soundfont",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "midly"
+version = "0.5.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "207d755f4cb882d20c4da58d707ca9130a0c9bc5061f657a4f299b8e36362b7a"
+dependencies = [
+ "rayon",
 ]
 
 [[package]]
@@ -3450,6 +3512,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "20675572f6f24e9e76ef639bc5552774ed45f1c30e2951e1e99c59888861c539"
 
 [[package]]
+name = "rayon"
+version = "1.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa"
+dependencies = [
+ "either",
+ "rayon-core",
+]
+
+[[package]]
+name = "rayon-core"
+version = "1.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1465873a3dfdaa8ae7cb14b4383657caab0b3e8a0aa9ae8e04b044854c8dfce2"
+dependencies = [
+ "crossbeam-deque",
+ "crossbeam-utils",
+]
+
+[[package]]
 name = "read-fonts"
 version = "0.29.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3553,6 +3635,19 @@ dependencies = [
  "bitflags 2.9.1",
  "serde",
  "serde_derive",
+]
+
+[[package]]
+name = "ron"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "beceb6f7bf81c73e73aeef6dd1356d9a1b2b4909e1f0fc3e59b034f9572d7b7f"
+dependencies = [
+ "base64 0.22.1",
+ "bitflags 2.9.1",
+ "serde",
+ "serde_derive",
+ "unicode-ident",
 ]
 
 [[package]]
@@ -3755,6 +3850,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "soundfont"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2a7f4cb358863e55f8f1a3882f68601360cf6c42fc53ff2fe9aea41c33e24489"
+
+[[package]]
 name = "spin"
 version = "0.9.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3879,6 +3980,7 @@ name = "teaming-up"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "bevy-midi-graph",
 ]
 
 [[package]]

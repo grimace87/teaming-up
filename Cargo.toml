@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 bevy = "0.16.0"
+bevy-midi-graph = { git = "https://github.com/grimace87/bevy-midi-graph.git", rev = "a52fcdcdb61fb8a64b0a7cf709f3bcfc29805d46" }
 
